@@ -5,7 +5,6 @@ export default async function getWord(word: string) {
 
   try {
     const res = await axios.get(apiUrl);
-
     return res.data;
   } catch (err) {
     console.log(err);
