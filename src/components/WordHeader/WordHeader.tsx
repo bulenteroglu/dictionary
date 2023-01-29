@@ -15,7 +15,7 @@ export default function WordHeader({ word }: { word: Word }) {
         <span className="text-6 text-purple">{word.phonetic}</span>
       </div>
 
-      {hasAudio.audio && (
+      {!!hasAudio && (
         <div onClick={() => handleAudioClick()} className="cursor-pointer">
           <Icon type="Play" />
         </div>
