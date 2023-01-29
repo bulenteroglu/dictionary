@@ -13,11 +13,23 @@ export default function WordDetail({ words }: { words: Words }) {
             {word.meanings.map((meaing, index) => {
               return (
                 <div className="mb-10" key={index}>
-                  <div>{meaing.partOfSpeech}</div>
-                  <div className="mt-10 mb-6">Meaning</div>
+                  <div className="flex items-center">
+                    <span className="text-6 font-bold italic">
+                      {meaing.partOfSpeech}
+                    </span>
+                    <div className="ml-5 h-px w-full bg-gray-light"></div>
+                  </div>
+
+                  <div className="mt-10 mb-6 text-5 text-gray-text">
+                    Meaning
+                  </div>
                   <ul className="space-y-3">
                     {meaing.definitions.map((definition, index) => {
-                      return <li key={index}>{definition.definition}</li>;
+                      return (
+                        <li className="ml-10 list-disc text-4.5" key={index}>
+                          {definition.definition}
+                        </li>
+                      );
                     })}
                   </ul>
                 </div>
